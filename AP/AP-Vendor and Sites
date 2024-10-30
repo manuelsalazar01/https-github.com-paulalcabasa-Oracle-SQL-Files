@@ -1,0 +1,10 @@
+Select a.vendor_id, a.vendor_name, a.segment1 , b.vendor_site_code_alt, b.vendor_site_id, b.vendor_site_code, B.ORG_ID,
+      case
+		when b.org_id = 82 then 'SPT'
+		when b.org_id = 83 then 'CFC'
+        when b.org_id = 84 then 'PROMO'
+      end CIA
+from   apps.po_vendors A,
+       ap.AP_SUPPLIER_SITES_ALL B
+where A.VENDOR_ID = b.vendor_id
+AND    a.vendor_name like 'AGUAS%SALTIL%';
